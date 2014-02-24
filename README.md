@@ -7,6 +7,7 @@ It can be used in any application that needs safe password storage.
 
 The keyring services supported by this library:
 * Mac OS X Keychain: the Apple Keychain service in Mac OS X.
+* In-memory keychain
 
 Additional keyring services we'd like to support:
 * KDE KWallet
