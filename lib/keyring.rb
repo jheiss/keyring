@@ -6,6 +6,8 @@ require "keyring/version"
 class Keyring
   require 'keyring/backend'
   
+  # If you want a particular backend then use, for example,
+  # Keyring.new(Keyring::Backend::Memory.new)
   def initialize(backend=nil)
     @backend = backend || Keyring::Backend.create
   end
