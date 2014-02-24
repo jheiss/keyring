@@ -1,6 +1,7 @@
+#!/bin/sh
 # keyring:  System keyring abstraction library
 # License: MIT (http://www.opensource.org/licenses/mit-license.php)
 
-class Keyring
-  VERSION = "0.0.1"
-end
+cat <<-EOF
+This is help output for a different command
+EOF

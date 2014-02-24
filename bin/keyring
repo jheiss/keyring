@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+# keyring:  System keyring abstraction library
+# License: MIT (http://www.opensource.org/licenses/mit-license.php)
+
+# When run from the source repository or from an unpacked copy of the
+# distribution we want to find the local library, even if there's a copy
+# installed on the system.
+$:.unshift(File.expand_path('../lib', File.dirname(__FILE__)))
+
+require 'keyring/cli'
+
+Keyring::CLI.new.main

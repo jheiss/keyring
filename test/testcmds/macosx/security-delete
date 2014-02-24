@@ -1,0 +1,27 @@
+#!/bin/sh
+# keyring:  System keyring abstraction library
+# License: MIT (http://www.opensource.org/licenses/mit-license.php)
+
+cat <<-EOF
+keychain: "/Users/jheiss/Library/Keychains/login.keychain"
+class: "genp"
+attributes:
+    0x00000007 <blob>="service"
+    0x00000008 <blob>=<NULL>
+    "acct"<blob>="username"
+    "cdat"<timedate>=0x32303133313132303233353532395A00  "20131120235529Z\000"
+    "crtr"<uint32>=<NULL>
+    "cusi"<sint32>=<NULL>
+    "desc"<blob>=<NULL>
+    "gena"<blob>=<NULL>
+    "icmt"<blob>=<NULL>
+    "invi"<sint32>=<NULL>
+    "mdat"<timedate>=0x32303133313132313232353534395A00  "20131121225549Z\000"
+    "nega"<sint32>=<NULL>
+    "prot"<blob>=<NULL>
+    "scrp"<sint32>=<NULL>
+    "svce"<blob>="service"
+    "type"<uint32>=<NULL>
+EOF
+
+printf "password has been deleted.\n" >&2

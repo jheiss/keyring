@@ -1,5 +1,22 @@
+# keyring:  System keyring abstraction library
+# License: MIT (http://www.opensource.org/licenses/mit-license.php)
+
 require "keyring/version"
 
-module Keyring
-  # Your code goes here...
+class Keyring
+  require 'keyring/backend'
+  
+  def initialize(backend=nil)
+    @backend = backend || Keyring::Backend.create
+  end
+  
+  def get_password(service, username)
+    @backend.get_password(service, username)
+  end
+  def set_password(service, username, password)
+    @backend.set_password(service, username, password)
+  end
+  def delete_password(service, username)
+    @backend.delete_password(service, username)
+  end
 end
