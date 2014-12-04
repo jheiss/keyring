@@ -8,10 +8,10 @@ It can be used in any application that needs safe password storage.
 The keyring services supported by this library:
 * Mac OS X Keychain: the Apple Keychain service in Mac OS X.
 * In-memory keychain
+* GNOME 2 Keyring
 
 Additional keyring services we'd like to support:
 * KDE KWallet
-* GNOME 2 Keyring
 * SecretServiceKeyring: for newer GNOME and KDE environments.
 * Windows Credential Manager
 
@@ -42,9 +42,15 @@ Keyring#get_password:
 
 'service' is an arbitrary string identifying your application.
 
+## Platform notes
+
+Gnome Keyring uses the [GirFFI](https://github.com/mvz/gir_ffi) bindings, which
+requires the introspection bindings to be installed (as well as gnome-keyring).
+`apt-get install gnome-keyring libgirepository1.0-dev` for Debian/Ubuntu.
+
 ## Credits
 
-Copyright 2013, Jason Heiss
+Copyright 2013-2014, Jason Heiss, wvengen
 
 Inspired by the keyring library for Python:
 https://bitbucket.org/kang/python-keyring-lib
