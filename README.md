@@ -6,14 +6,15 @@ This library provides a easy way to access the system keyring service from ruby.
 It can be used in any application that needs safe password storage.
 
 The keyring services supported by this library:
-* Mac OS X Keychain: the Apple Keychain service in Mac OS X.
-* In-memory keychain
+* Mac OS X Keychain: the Apple Keychain service in Mac OS X
 * GNOME 2 Keyring
+* In-memory keychain
 
 Additional keyring services we'd like to support:
 * KDE KWallet
-* SecretServiceKeyring: for newer GNOME and KDE environments.
+* SecretServiceKeyring: for newer GNOME and KDE environments
 * Windows Credential Manager
+* Windows Credential Manager, aka Windows Vault
 
 ## Installation
 
@@ -41,6 +42,11 @@ Keyring#get_password:
     keyring.delete_password('service', 'username')
 
 'service' is an arbitrary string identifying your application.
+
+By default keyring will attempt to pick the best backend supported on your system.  You can specify a particular backend:
+
+    require 'keyring'
+    keyring = Keyring.new(Keyring::Backend::Memory.new)
 
 ## Platform notes
 
