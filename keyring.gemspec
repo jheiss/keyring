@@ -25,4 +25,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   spec.add_development_dependency 'mocha'
   spec.add_dependency 'slop'
+
+  if RUBY_PLATFORM =~ /linux/
+    spec.add_dependency 'gir_ffi-gnome_keyring', '~> 0.0.3'
+  end
 end
