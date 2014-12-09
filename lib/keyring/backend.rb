@@ -15,7 +15,7 @@ class Keyring::Backend
     if supported.empty?
       raise(NotImplementedError)
     end
-    supported.max{|b| b.priority}
+    supported.max{|a, b| a.priority <=> b.priority }
   end
   
   #
