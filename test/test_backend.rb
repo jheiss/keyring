@@ -32,7 +32,7 @@ class KeyringBackendTests < Test::Unit::TestCase
     # check that backend with highest priority is selected
     Keyring::Backend.register_implementation(BackendHighPriority)
     Keyring::Backend.register_implementation(BackendLowPriority)
-    assert Keyring::Backend.create.kind_of? BackendHighPriority
+    assert_kind_of BackendHighPriority, Keyring::Backend.create
     Keyring::Backend.implementations.delete(BackendLowPriority)
     Keyring::Backend.implementations.delete(BackendHighPriority)
   end
