@@ -4,6 +4,10 @@
 # This is a keyring backend for the Apple Keychain
 # http://en.wikipedia.org/wiki/Keychain_(Apple)
 
+# Consider switching to ruby-keychain gem to avoid password in command line
+# https://rubygems.org/gems/ruby-keychain
+# https://github.com/fcheung/keychain
+
 require 'open3'
 
 class Keyring::Backend::MacosxKeychain < Keyring::Backend
