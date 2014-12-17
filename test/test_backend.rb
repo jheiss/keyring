@@ -8,18 +8,35 @@ class KeyringBackendTests < Test::Unit::TestCase
   def setup
     @backend = Keyring::Backend.new
   end
-  
+
   class Keyring::Backend::Test < Keyring::Backend; end
+  class BackendHighPriority < Keyring::Backend
+    def priority; 100 end
+    def supported?; true end
+  end
+  class BackendLowPriority < Keyring::Backend
+    def priority; 10 end
+    def supported?; true end
+  end
+
   def test_register_implementation
     Keyring::Backend.register_implementation(Keyring::Backend::Test)
     assert Keyring::Backend.implementations.include?(Keyring::Backend::Test)
     Keyring::Backend.implementations.delete(Keyring::Backend::Test)
   end
+
   def test_create
     # This should be a bit more thorough
     assert_kind_of Keyring::Backend, Keyring::Backend.create
+
+    # check that backend with highest priority is selected
+    Keyring::Backend.register_implementation(BackendHighPriority)
+    Keyring::Backend.register_implementation(BackendLowPriority)
+    assert_kind_of BackendHighPriority, Keyring::Backend.create
+    Keyring::Backend.implementations.delete(BackendLowPriority)
+    Keyring::Backend.implementations.delete(BackendHighPriority)
   end
-  
+
   def test_supported
     refute @backend.supported?
   end
