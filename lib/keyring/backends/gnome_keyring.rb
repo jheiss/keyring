@@ -2,6 +2,8 @@
 # License: MIT (http://www.opensource.org/licenses/mit-license.php)
 
 # This is a keyring backend for the Gnome Keyring
+# https://wiki.gnome.org/GnomeKeyring
+# http://en.wikipedia.org/wiki/GNOME_Keyring
 
 class Keyring::Backend::GnomeKeyring < Keyring::Backend
   register_implementation(self)
