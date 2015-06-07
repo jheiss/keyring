@@ -19,6 +19,10 @@ class KeyringTests < Test::Unit::TestCase
     keyring = Keyring.new(backend)
     assert_equal backend, keyring.instance_variable_get(:@backend)
   end
+
+  def test_backend
+    assert_equal @backend, @keyring.backend
+  end
   
   def test_get_password
     @backend.expects(:get_password).with('service', 'username').returns('password')

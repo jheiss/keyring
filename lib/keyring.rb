@@ -5,6 +5,8 @@ require "keyring/version"
 
 class Keyring
   require 'keyring/backend'
+
+  attr_reader :backend
   
   # If you want a particular backend then use, for example,
   # Keyring.new(Keyring::Backend::Memory.new)
