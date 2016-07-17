@@ -38,8 +38,8 @@ $ gem install keyring
 
 ## Usage
 
-The basic usage of keyring is simple: just call Keyring#set_password and
-Keyring#get_password:
+The basic usage of keyring is simple: just call `Keyring#set_password` and
+`Keyring#get_password`:
 
 ```ruby
 require 'keyring'
@@ -49,7 +49,7 @@ password = keyring.get_password('service', 'username')
 keyring.delete_password('service', 'username')
 ```
 
-'service' is an arbitrary string identifying your application.
+`'service'` is an arbitrary string identifying your application.
 
 By default keyring will attempt to pick the best backend supported on your system.  You can specify a particular backend:
 
