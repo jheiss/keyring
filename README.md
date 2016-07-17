@@ -20,33 +20,43 @@ Additional keyring services we'd like to support:
 
 Add this line to your application's Gemfile:
 
-    gem 'keyring'
+```ruby
+gem 'keyring'
+```
 
 And then execute:
 
-    $ bundle
+```shell
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install keyring
+```shell
+$ gem install keyring
+```
 
 ## Usage
 
 The basic usage of keyring is simple: just call Keyring#set_password and
 Keyring#get_password:
 
-    require 'keyring'
-    keyring = Keyring.new
-    keyring.set_password('service', 'username', 'password')
-    password = keyring.get_password('service', 'username')
-    keyring.delete_password('service', 'username')
+```ruby
+require 'keyring'
+keyring = Keyring.new
+keyring.set_password('service', 'username', 'password')
+password = keyring.get_password('service', 'username')
+keyring.delete_password('service', 'username')
+```
 
 'service' is an arbitrary string identifying your application.
 
 By default keyring will attempt to pick the best backend supported on your system.  You can specify a particular backend:
 
-    require 'keyring'
-    keyring = Keyring.new(Keyring::Backend::Memory.new)
+```ruby
+require 'keyring'
+keyring = Keyring.new(Keyring::Backend::Memory.new)
+```
 
 ## Platform notes
 
