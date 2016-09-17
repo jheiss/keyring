@@ -9,10 +9,17 @@ rescue NoMethodError
 end 
 inst = Gem::DependencyInstaller.new
 begin
+
   if RUBY_PLATFORM =~ /linux/
     warn "*linux: installing gir_ffi-gnome_keyring..."
     inst.install "gir_ffi-gnome_keyring", '~> 0.0.3'
   end
+
+  if RUBY_PLATFORM =~ /darwin10/
+    warn '*linux: installing ruby-keychain'
+    inst.install 'ruby-keychain', '~> 0.3.2'
+  end
+
 rescue
   exit(1)
 end 
