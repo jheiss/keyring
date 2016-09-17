@@ -16,7 +16,7 @@ begin
   end
 
   if RUBY_PLATFORM =~ /darwin10/
-    warn '*linux: installing ruby-keychain'
+    warn '*osx: installing ruby-keychain'
     inst.install 'ruby-keychain', '~> 0.3.2'
   end
 
