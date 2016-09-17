@@ -1,7 +1,0 @@
-#!/bin/sh
-# keyring:  System keyring abstraction library
-# License: MIT (http://www.opensource.org/licenses/mit-license.php)
-
-cat <<-EOF
-This is help output for a different command
-EOF

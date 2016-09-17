@@ -1,6 +1,0 @@
-#!/bin/sh
-# keyring:  System keyring abstraction library
-# License: MIT (http://www.opensource.org/licenses/mit-license.php)
-
-printf "security: SecKeychainSearchCopyNext: The specified item could not be found in the keychain.\n" >&2
-exit 44
