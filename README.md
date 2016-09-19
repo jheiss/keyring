@@ -66,7 +66,7 @@ requires the introspection bindings to be installed (as well as gnome-keyring).
 
 ## Credits
 
-Copyright 2013-2014, Jason Heiss, wvengen
+Copyright 2013-2016, Jason Heiss, wvengen, jtopper
 
 Inspired by the keyring library for Python:
 https://bitbucket.org/kang/python-keyring-lib

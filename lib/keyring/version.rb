@@ -2,5 +2,5 @@
 # License: MIT (http://www.opensource.org/licenses/mit-license.php)
 
 class Keyring
-  VERSION = "0.3.1"
+  VERSION = "0.4.0"
 end
