@@ -26,6 +26,16 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'mocha'
   spec.add_dependency 'slop', "< 4.0"
 
+  # Note that when updating these versions you must also make
+  # equivalent changes in ext/mkrf_conf.rb
+
+  case Gem::Platform.local.os
+    when 'linux'
+      spec.add_dependency "gir_ffi-gnome_keyring", '~> 0.0.3'
+    when 'darwin'
+      spec.add_dependency 'ruby-keychain', '~> 0.3.2'
+  end
+
   spec.extensions = %w[ext/mkrf_conf.rb]
 
 end

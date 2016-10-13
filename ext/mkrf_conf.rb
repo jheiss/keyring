@@ -1,5 +1,6 @@
 # http://en.wikibooks.org/wiki/Ruby_Programming/RubyGems#How_to_install_different_versions_of_gems_depending_on_which_version_of_ruby_the_installee_is_using
 
+
 require 'rubygems'
 require 'rubygems/command.rb'
 require 'rubygems/dependency_installer.rb' 
@@ -10,12 +11,11 @@ end
 inst = Gem::DependencyInstaller.new
 begin
 
-  if RUBY_PLATFORM =~ /linux/
+  case Gem::Platform.local.os
+  when 'linux'
     warn "*linux: installing gir_ffi-gnome_keyring..."
     inst.install "gir_ffi-gnome_keyring", '~> 0.0.3'
-  end
-
-  if RUBY_PLATFORM =~ /darwin10/
+  when 'darwin'
     warn '*osx: installing ruby-keychain'
     inst.install 'ruby-keychain', '~> 0.3.2'
   end
